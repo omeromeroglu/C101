@@ -6,59 +6,67 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("********* Aritmatik Operatörler **********");
-            int x = 3;
-            int y = 3;
-            y = y + 2;
-
-            Console.WriteLine(y);
-            y += 2;
-            Console.WriteLine(y);
-            y /= 1;
-            Console.WriteLine(y);
-            y *= 2;
-            Console.WriteLine(y);
-
-            Console.WriteLine("****** Mantıksal Operatörler *******");
-
-            bool isSuccess = true;
-            bool isCompleted = false;
+            int a = 2;
+            int b = 3;
+            Console.WriteLine(a + b);
 
 
-            if (isSuccess && isCompleted)
-                Console.WriteLine("Perfect");
-            if (isSuccess || isCompleted)
-                Console.WriteLine("Good");
-            if (isSuccess && !isCompleted)
-                Console.WriteLine("Fine");
 
-            int a = 3;
-            int b = 4;
-            bool sonuc = a < b;
+            int toplamSonucu;
+            Methotlar instance = new Methotlar();
+            instance.Topla(4, 5, out toplamSonucu);
+            Console.WriteLine(toplamSonucu);
 
-            Console.WriteLine(sonuc);
-            sonuc = a > b;
-            Console.WriteLine(sonuc);
-            sonuc = a >= b;
-            Console.WriteLine(sonuc);
-            sonuc = a <= b;
-            Console.WriteLine(sonuc);
-            sonuc = a == b;
-            Console.WriteLine(sonuc);
-            sonuc = a != b;
-            Console.WriteLine(sonuc);
+            int ifade = 999;
+            instance.EkranaYazdir(ifade.ToString());
+            instance.EkranaYazdir(ifade);
+            instance.EkranaYazdir("Ömer", " Ömeroğlu");
 
 
-            int sayi1 = 10;
-            int sayi2 = 5;
-            int sonuc1 = sayi1 / sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 * sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 + sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1++;
-            Console.WriteLine(sonuc1);
+            //int sonuc2 = ornek.ArttirveTopla(a, b);
+            //ornek.EkranaYazdir(Convert.ToString(sonuc2));
+            //ornek.EkranaYazdir(Convert.ToString(a + b));
+        }
+
+    }
+
+
+    class Methotlar
+    {
+
+        public void Topla(int a, int b, out int toplam)
+        {
+            toplam = a + b;
+        }
+
+
+
+        public void EkranaYazdir(string veri)
+        {
+            Console.WriteLine(veri);
+        }
+
+
+
+        public void EkranaYazdir(int veri)
+        {
+            Console.WriteLine(veri.ToString());
+        }
+
+
+
+        public void EkranaYazdir(string veri1, string veri2)
+        {
+            Console.WriteLine(veri1 + veri2);
+        }
+
+
+        public int ArttirveTopla(int deger1, int deger2)
+        {
+            deger1 += 1;
+            deger2 += 2;
+            return deger1 + deger2;
         }
     }
-}
+    }
+
