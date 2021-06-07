@@ -6,59 +6,56 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("********* Aritmatik Operatörler **********");
-            int x = 3;
-            int y = 3;
-            y = y + 2;
+            int month = DateTime.Now.Month;
 
-            Console.WriteLine(y);
-            y += 2;
-            Console.WriteLine(y);
-            y /= 1;
-            Console.WriteLine(y);
-            y *= 2;
-            Console.WriteLine(y);
+            switch (month)
+            {
+                case 1:
+                    Console.WriteLine("Ocak Ayındasınız");
+                    break;
 
-            Console.WriteLine("****** Mantıksal Operatörler *******");
+                case 2:
+                    Console.WriteLine("Şubat Ayındasınız");
+                    break;
 
-            bool isSuccess = true;
-            bool isCompleted = false;
+                case 4:
+                    Console.WriteLine("Nisan Ayındasınız");
+                    break;
 
+                case 3:
+                    Console.WriteLine("Mart Ayındasınız");
+                    break;
 
-            if (isSuccess && isCompleted)
-                Console.WriteLine("Perfect");
-            if (isSuccess || isCompleted)
-                Console.WriteLine("Good");
-            if (isSuccess && !isCompleted)
-                Console.WriteLine("Fine");
+                default:
+                    Console.WriteLine("Yanlış veri girdiniz");
+                    break;
 
-            int a = 3;
-            int b = 4;
-            bool sonuc = a < b;
+                    switch (month)
+                    {
+                        case 12:
+                        case 1:
+                        case 2:
+                            Console.WriteLine("Kış Ayındasınız");
+                            break;
 
-            Console.WriteLine(sonuc);
-            sonuc = a > b;
-            Console.WriteLine(sonuc);
-            sonuc = a >= b;
-            Console.WriteLine(sonuc);
-            sonuc = a <= b;
-            Console.WriteLine(sonuc);
-            sonuc = a == b;
-            Console.WriteLine(sonuc);
-            sonuc = a != b;
-            Console.WriteLine(sonuc);
+                        case 3:
+                        case 4:
+                        case 5:
+                            Console.WriteLine("İlkbahar Ayındasınız");
+                            break;
 
+                        case 6:
+                        case 7:
+                        case 8:
+                            Console.WriteLine("Yaz Ayındasınız");
+                            break;
 
-            int sayi1 = 10;
-            int sayi2 = 5;
-            int sonuc1 = sayi1 / sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 * sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 + sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1++;
-            Console.WriteLine(sonuc1);
-        }
-    }
+                        case 9:
+                        case 10:
+                        case 11:
+                            Console.WriteLine("Sonbahar Ayındasınız");
+                            break;
+
+                    }
+            }
 }
