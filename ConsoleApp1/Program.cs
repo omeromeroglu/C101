@@ -6,59 +6,48 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("********* Aritmatik Operatörler **********");
-            int x = 3;
-            int y = 3;
-            y = y + 2;
-
-            Console.WriteLine(y);
-            y += 2;
-            Console.WriteLine(y);
-            y /= 1;
-            Console.WriteLine(y);
-            y *= 2;
-            Console.WriteLine(y);
-
-            Console.WriteLine("****** Mantıksal Operatörler *******");
-
-            bool isSuccess = true;
-            bool isCompleted = false;
+            string degisken = "Dersiniz CSharp, Hoşgeldiniz!";
+            string degisken2 = "CSharp";
 
 
-            if (isSuccess && isCompleted)
-                Console.WriteLine("Perfect");
-            if (isSuccess || isCompleted)
-                Console.WriteLine("Good");
-            if (isSuccess && !isCompleted)
-                Console.WriteLine("Fine");
+            Console.WriteLine(degisken.Length);
 
-            int a = 3;
-            int b = 4;
-            bool sonuc = a < b;
+            Console.WriteLine(degisken.ToUpper());
+            Console.WriteLine(degisken.ToLower());
 
-            Console.WriteLine(sonuc);
-            sonuc = a > b;
-            Console.WriteLine(sonuc);
-            sonuc = a >= b;
-            Console.WriteLine(sonuc);
-            sonuc = a <= b;
-            Console.WriteLine(sonuc);
-            sonuc = a == b;
-            Console.WriteLine(sonuc);
-            sonuc = a != b;
-            Console.WriteLine(sonuc);
+            Console.WriteLine(String.Concat(degisken, "Merhaba!"));
+
+            Console.WriteLine(degisken.CompareTo(degisken2));
+            Console.WriteLine(String.Compare(degisken, degisken2, true));
+            Console.WriteLine(String.Compare(degisken, degisken2, false));
+
+            Console.WriteLine(degisken.Contains(degisken2));
+            Console.WriteLine(degisken.EndsWith("Hoşgeldiniz!"));
+            Console.WriteLine(degisken.StartsWith("Dersiniz"));
 
 
-            int sayi1 = 10;
-            int sayi2 = 5;
-            int sonuc1 = sayi1 / sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 * sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 + sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1++;
-            Console.WriteLine(sonuc1);
+            Console.WriteLine(degisken.IndexOf("CS"));
+            Console.WriteLine(degisken.IndexOf("Ömer"));
+            Console.WriteLine(degisken.LastIndexOf("i"));
+
+
+            Console.WriteLine(degisken.Insert(0, "Merhaba"));
+
+            Console.WriteLine(degisken + degisken2.PadLeft(30));
+            Console.WriteLine(degisken.PadRight(50) + degisken2);
+
+            Console.WriteLine(degisken.Remove(10));
+            Console.WriteLine(degisken.Remove(5, 3));
+            Console.WriteLine(degisken.Remove(6, 1));
+
+
+            Console.WriteLine(degisken.Replace("CSharp", "C#"));
+
+            Console.WriteLine(degisken.Split(' ')[1]);
+
+            Console.WriteLine(degisken.Substring(4));
+            Console.WriteLine(degisken.Substring(4, 6));
+
         }
     }
 }
