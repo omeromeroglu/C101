@@ -6,59 +6,20 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("********* Aritmatik Operatörler **********");
-            int x = 3;
-            int y = 3;
-            y = y + 2;
+            int time = DateTime.Now.Hour;
 
-            Console.WriteLine(y);
-            y += 2;
-            Console.WriteLine(y);
-            y /= 1;
-            Console.WriteLine(y);
-            y *= 2;
-            Console.WriteLine(y);
+            if (time >= 6 && time < 11)
+                Console.WriteLine("Günaydın!");
+            else if (time <= 18)
+                Console.WriteLine("İyi Günler");
+            else
+                Console.WriteLine("İyi Geceler");
 
-            Console.WriteLine("****** Mantıksal Operatörler *******");
+            string sonuc = time <= 18 ? "İyi Günler" : "İyi Geceler";
 
-            bool isSuccess = true;
-            bool isCompleted = false;
-
-
-            if (isSuccess && isCompleted)
-                Console.WriteLine("Perfect");
-            if (isSuccess || isCompleted)
-                Console.WriteLine("Good");
-            if (isSuccess && !isCompleted)
-                Console.WriteLine("Fine");
-
-            int a = 3;
-            int b = 4;
-            bool sonuc = a < b;
+            sonuc = time >= 6 && time < 11 ? "Günaydın!" : time <= 18 ? "İyi Günler" : "İyi Geceler";
 
             Console.WriteLine(sonuc);
-            sonuc = a > b;
-            Console.WriteLine(sonuc);
-            sonuc = a >= b;
-            Console.WriteLine(sonuc);
-            sonuc = a <= b;
-            Console.WriteLine(sonuc);
-            sonuc = a == b;
-            Console.WriteLine(sonuc);
-            sonuc = a != b;
-            Console.WriteLine(sonuc);
-
-
-            int sayi1 = 10;
-            int sayi2 = 5;
-            int sonuc1 = sayi1 / sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 * sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 + sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1++;
-            Console.WriteLine(sonuc1);
         }
     }
 }
