@@ -6,59 +6,78 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("********* Aritmatik Operatörler **********");
-            int x = 3;
-            int y = 3;
-            y = y + 2;
-
-            Console.WriteLine(y);
-            y += 2;
-            Console.WriteLine(y);
-            y /= 1;
-            Console.WriteLine(y);
-            y *= 2;
-            Console.WriteLine(y);
-
-            Console.WriteLine("****** Mantıksal Operatörler *******");
-
-            bool isSuccess = true;
-            bool isCompleted = false;
+            Calisan calisan1 = new Calisan("Ömer", "Ömeroğlu", 313313, "Yazılım");
 
 
-            if (isSuccess && isCompleted)
-                Console.WriteLine("Perfect");
-            if (isSuccess || isCompleted)
-                Console.WriteLine("Good");
-            if (isSuccess && !isCompleted)
-                Console.WriteLine("Fine");
 
-            int a = 3;
-            int b = 4;
-            bool sonuc = a < b;
+            Calisan calisan2 = new Calisan();
+            calisan1.Ad = "Deniz";
+            calisan1.Soyad = "Arda";
+            calisan1.No = 32131231;
+            calisan1.Departman = "Pazarlama";
 
-            Console.WriteLine(sonuc);
-            sonuc = a > b;
-            Console.WriteLine(sonuc);
-            sonuc = a >= b;
-            Console.WriteLine(sonuc);
-            sonuc = a <= b;
-            Console.WriteLine(sonuc);
-            sonuc = a == b;
-            Console.WriteLine(sonuc);
-            sonuc = a != b;
-            Console.WriteLine(sonuc);
+            calisan1.CalisanBilgileri();
+            calisan2.CalisanBilgileri();
 
-
-            int sayi1 = 10;
-            int sayi2 = 5;
-            int sonuc1 = sayi1 / sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 * sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 + sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1++;
-            Console.WriteLine(sonuc1);
+            Console.WriteLine(Islemler.Topla(50, 100));
+            Console.WriteLine(Islemler.Cikar(350, 100));
         }
     }
-}
+
+
+    class Calisan
+    {
+        public string Ad { get; set; }
+        public string Soyad { get; set; }
+        public int No { get; set; }
+        public string Departman { get; set; }
+
+
+        public Calisan()
+        {
+
+        }
+
+
+        public Calisan(string ad, string soyad)
+        {
+            this.Ad = ad;
+            this.Soyad = soyad;
+        }
+
+
+
+        public Calisan(string ad, string soyad, int no, string departman) : this(ad, soyad)
+        {
+            this.No = no;
+            this.Departman = departman;
+        }
+
+
+
+        public void CalisanBilgileri()
+        {
+            Console.WriteLine($"Çalışan Adı : {Ad}");
+            Console.WriteLine($"Çalışan Soyadı : {Soyad}");
+            Console.WriteLine($"Çalışan Numarası : {No}");
+            Console.WriteLine($"Çalışan Departmanı : {Departman}");
+        }
+    }
+
+
+
+    static class Islemler
+    {
+        public static long Topla(int sayi1, int sayi2)
+        {
+            return sayi1 + sayi2;
+        }
+
+
+        public static long Cikar(int sayi1, int sayi2)
+        {
+            return sayi1 - sayi2;
+        }
+    }
+    }
+
