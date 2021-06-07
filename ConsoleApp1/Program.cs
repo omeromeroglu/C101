@@ -6,59 +6,38 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("********* Aritmatik Operatörler **********");
-            int x = 3;
-            int y = 3;
-            y = y + 2;
+            string[] renkler = new string[5];
 
-            Console.WriteLine(y);
-            y += 2;
-            Console.WriteLine(y);
-            y /= 1;
-            Console.WriteLine(y);
-            y *= 2;
-            Console.WriteLine(y);
+            string[] hayvanlar = { "Kedi", "Köpek", "Kuş", "Maymun" };
 
-            Console.WriteLine("****** Mantıksal Operatörler *******");
+            int[] dizi;
+            dizi = new int[5];
 
-            bool isSuccess = true;
-            bool isCompleted = false;
+            renkler[0] = "Mavi";
+            dizi[3] = 10;
 
+            Console.WriteLine(hayvanlar[1]);
+            Console.WriteLine(dizi[3]);
+            Console.WriteLine(renkler[0]);
 
-            if (isSuccess && isCompleted)
-                Console.WriteLine("Perfect");
-            if (isSuccess || isCompleted)
-                Console.WriteLine("Good");
-            if (isSuccess && !isCompleted)
-                Console.WriteLine("Fine");
+            Console.Write("Lütfen dizinin eleman sayısını giriniz");
+            int diziuzunlugu = int.Parse(Console.ReadLine());
+            int[] sayiDizisi = new int[diziuzunlugu];
 
-            int a = 3;
-            int b = 4;
-            bool sonuc = a < b;
+            for (int i = 0; i < diziuzunlugu; i++)
+            {
+                Console.Write("Lütfen {0}. sayısı giriniz.", i + 1);
+                sayiDizisi[i] = int.Parse(Console.ReadLine());
+            }
 
-            Console.WriteLine(sonuc);
-            sonuc = a > b;
-            Console.WriteLine(sonuc);
-            sonuc = a >= b;
-            Console.WriteLine(sonuc);
-            sonuc = a <= b;
-            Console.WriteLine(sonuc);
-            sonuc = a == b;
-            Console.WriteLine(sonuc);
-            sonuc = a != b;
-            Console.WriteLine(sonuc);
+            int toplam = 0;
 
+            foreach (var sayi in sayiDizisi)
+            {
+                toplam += sayi;
+            }
 
-            int sayi1 = 10;
-            int sayi2 = 5;
-            int sonuc1 = sayi1 / sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 * sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1 + sayi2;
-            Console.WriteLine(sonuc1);
-            sonuc1 = sayi1++;
-            Console.WriteLine(sonuc1);
+            Console.WriteLine("Ortalama :" + toplam / diziuzunlugu);
         }
     }
 }
